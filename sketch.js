@@ -210,10 +210,18 @@ function drawKeypoints(color) {
       let keypoint = pose.keypoints[j];
       // Only draw an ellipse is the pose probability is bigger than 0.2
       if (keypoint.score > 0.2) {
-        ctx.fillStyle = (color) ? color : config.keypointColor;
         fill(255, 255, 255);
         noStroke();
-        ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+        if (keypoint.part == "leftWrist") {
+          ctx.fillStyle = song.leftColor;
+          ellipse(keypoint.position.x, keypoint.position.y, 20, 20);
+        } else if (keypoint.part == "rightWrist") {
+          ctx.fillStyle = song.rightColor;
+          ellipse(keypoint.position.x, keypoint.position.y, 20, 20);
+        } else {
+          ctx.fillStyle = (color) ? color : config.keypointColor;
+          ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+        }
       }
     }
   }
@@ -221,6 +229,7 @@ function drawKeypoints(color) {
 
 // A function to draw the skeletons
 function drawSkeleton(color) {
+  ctx.lineWidth = 2;
   ctx.strokeStyle = (color) ? color : config.skeletonColor;
   // Loop through all the skeletons detected
   for (let i = 0; i < poses.length; i++) {
@@ -265,6 +274,7 @@ function drawZones(color) {
 }
 
 function drawZone(zone, color, fill) {
+  ctx.lineWidth = 3;
   ctx.strokeStyle = color;
   ctx.fillStyle = color;
   if (!fill) ctx.strokeRect(zones[zone].x, zones[zone].y, zones[zone].w,
@@ -277,6 +287,7 @@ function drawZone(zone, color, fill) {
 }
 
 function highlightBoxes() {
+  ctx.lineWidth = 4;
   activeNotes.forEach(function(item, index) {
     item.forEach(function(item2, index) {
       ctx.fillStyle = item2.color ? song.leftColor : song.rightColor;
@@ -375,7 +386,7 @@ function countdown(s) {
       clearInterval(interval);
       document.getElementById("timer").style.display = "none";
     } else i--;
-  }, 250);
+  }, 1000);
   setTimeout(function() {
     startSong(s);
   }, countdownTime);
@@ -518,7 +529,9 @@ function modelReady() {
       document.getElementsByTagName("body")[0].appendChild(pre);
     }
 
-    document.getElementById("status").style.display = "none";
+    document.getElementById("start").classList.toggle("disabled");
+    document.getElementById("start").disabled = false;
+    document.getElementById("btn-txt").innerHTML = "START";
 
     canvas.classList.add("canvasMain");
   }

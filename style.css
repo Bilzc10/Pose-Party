@@ -20,12 +20,14 @@ src: url('./azonix/Azonix.otf') format('opentype');
   font-size: 1vw;
 }
 
+#timer {
+  -webkit-text-stroke: 1px white;
+}
+
   .flip180 {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-    /* Safari and Chrome */
     -moz-transform: rotateY(180deg);
-    /* Firefox */
   }
 
   .bigText {
@@ -126,6 +128,10 @@ html {
    transform: translate(-50%, -50%);
  }
 
+ #start.disabled {
+   background: linear-gradient(gray, lightgray);
+ }
+
  .start:active {
    background: linear-gradient(#ee30ef, #ce2ccf) !important;
  }
@@ -134,7 +140,7 @@ html {
    background: linear-gradient(#a21fa3, #4d144e);
  }
 
- .btn-txt {
+ #btn-txt {
    opacity: .7;
    font-size: 1.5em;
    margin: auto;
