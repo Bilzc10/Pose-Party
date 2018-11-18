@@ -11,6 +11,15 @@ src: url('./azonix/Azonix.otf') format('opentype');
   display: none;
 }
 
+#score {
+  display: none;
+  position: absolute;
+  bottom: 2.5%;
+  left: 2.5%;
+  font-family: 'azonix', sans-serif;
+  font-size: 1vw;
+}
+
   .flip180 {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);

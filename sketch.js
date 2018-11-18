@@ -43,6 +43,7 @@ document.getElementById("song").addEventListener("click", function() {
   document.getElementById("select").style.display = "none";
   document.getElementById("menu").style.display = "block";
   document.getElementById("start").style.display = "none";
+  document.getElementById("score").style.display = "inline";
 
   document.getElementsByTagName("canvas")[0].width = 480;
   document.getElementsByTagName("canvas")[0].style.display = "inline";
@@ -343,7 +344,8 @@ function detectZoneCollision() {
                     if (note.location == item) {
                       score += note.score ? note.score : song.defaultPointValue;
                       addExplodeyNotes(note);
-
+                      document.getElementById("score").innerHTML =
+                        "Score: " + score;
                       delete activeNotes[index0][index1];
                     }
                   }

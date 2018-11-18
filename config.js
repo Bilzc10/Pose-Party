@@ -31,7 +31,7 @@ var config = {
 
   /* Zones - Defines zones for detection
    * name - string, MUST BE UNIQUE
-   * type - 'left' (left colpr), right (right color)
+   * type - 'right' (left colpr), right (right color)
    * coords - The 2 coordinates for defining the shape of the zone. Positive coordinates are measured from origin, negative are measured from opposite origin.
    * detect - array, all parts that should set off a collision
    * * * Possible Values: "nose", "leftEye", "rightEye", "leftEar", "rightEar", "leftShoulder", "rightShoulder", "leftElbow", "rightElbow", "leftWrist", "rightWrist", "leftHip", "rightHip", "leftKnee", "rightKnee", "leftAnkle", "rightAnkle"
@@ -42,7 +42,7 @@ var config = {
     default: [ // The default zone configuration.
       {
         name: 0, //'TopLeftRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [0, 0],
           [100, 100]
@@ -53,7 +53,7 @@ var config = {
         stop: function() {}
       }, {
         name: 1, //'TopCenterRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [190, 0],
           [290, 100]
@@ -64,7 +64,7 @@ var config = {
         stop: function() {}
       }, {
         name: 2, //'TopRightRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [-160, 0],
           [-260, 100]
@@ -75,7 +75,7 @@ var config = {
         stop: function() {}
       }, {
         name: 3, //'MiddleRightRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [-160, 190],
           [-260, 290]
@@ -86,7 +86,7 @@ var config = {
         stop: function() {}
       }, {
         name: 4, //'BottomRightRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [-160, -0],
           [-260, -100]
@@ -97,7 +97,7 @@ var config = {
         stop: function() {}
       }, {
         name: 5, //'BottomCenterRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [190, -0],
           [290, -100]
@@ -108,7 +108,7 @@ var config = {
         stop: function() {}
       }, {
         name: 6, //'BottomLeftRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [0, -0],
           [100, -100]
@@ -119,7 +119,7 @@ var config = {
         stop: function() {}
       }, {
         name: 7, //'MiddleLeftRight',
-        type: 'right',
+        type: 'left',
         coords: [
           [0, 190],
           [100, 290]
@@ -130,7 +130,7 @@ var config = {
         stop: function() {}
       }, {
         name: 8,
-        type: 'left',
+        type: 'right',
         coords: [
           [0, 0],
           [100, 100]
@@ -141,7 +141,7 @@ var config = {
         stop: function() {}
       }, {
         name: 9,
-        type: 'left',
+        type: 'right',
         coords: [
           [190, 0],
           [290, 100]
@@ -152,7 +152,7 @@ var config = {
         stop: function() {}
       }, {
         name: 10,
-        type: 'left',
+        type: 'right',
         coords: [
           [-160, 0],
           [-260, 100]
@@ -163,7 +163,7 @@ var config = {
         stop: function() {}
       }, {
         name: 11,
-        type: 'left',
+        type: 'right',
         coords: [
           [-160, 190],
           [-260, 290]
@@ -174,7 +174,7 @@ var config = {
         stop: function() {}
       }, {
         name: 12,
-        type: 'left',
+        type: 'right',
         coords: [
           [-160, -0],
           [-260, -100]
@@ -185,7 +185,7 @@ var config = {
         stop: function() {}
       }, {
         name: 13,
-        type: 'left',
+        type: 'right',
         coords: [
           [190, -0],
           [290, -100]
@@ -196,7 +196,7 @@ var config = {
         stop: function() {}
       }, {
         name: 14,
-        type: 'left',
+        type: 'right',
         coords: [
           [0, -0],
           [100, -100]
@@ -207,7 +207,7 @@ var config = {
         stop: function() {}
       }, {
         name: 15,
-        type: 'left',
+        type: 'right',
         coords: [
           [0, 190],
           [100, 290]
